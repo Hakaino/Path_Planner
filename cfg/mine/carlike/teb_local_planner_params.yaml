@@ -6,11 +6,11 @@ TebLocalPlannerROS:
   
  teb_autosize: True
  dt_ref: 0.3
- dt_hysteresis: 0.1
+ dt_hysteresis: 0.05
  max_samples: 500
  global_plan_overwrite_orientation: True
  allow_init_with_backwards_motion: True
- max_global_plan_lookahead_dist: 3.0
+ max_global_plan_lookahead_dist: 10.0
  global_plan_viapoint_sep: -1
  global_plan_prune_distance: 1
  exact_arc_length: False
@@ -19,19 +19,19 @@ TebLocalPlannerROS:
     
  # Robot
          
- max_vel_x: 0.8
- max_vel_x_backwards: 0.4
+ max_vel_x: 0.40 #may go until 19 km/h factory
+ max_vel_x_backwards: 2.0
  max_vel_y: 0.0
- max_vel_theta: 0.28 # the angular velocity is also bounded by min_turning_radius in case of a carlike robot (r = v / omega)
- acc_lim_x: 50.0
- acc_lim_theta: 50.0
+ max_vel_theta: 0.3 # the angular velocity is also bounded by min_turning_radius in case of a carlike robot (r = v / omega) 
+ acc_lim_x: 0.5
+ acc_lim_theta: 0.5
 
  # ********************** Carlike robot parameters ********************
  min_turning_radius: 2.8        # Min turning radius of the carlike robot (compute value using a model or adjust with rqt_reconfigure manually)
- wheelbase: 1.6                 # Wheelbase of our robot
+ wheelbase: 1.6                # Wheelbase of our robot
  cmd_angle_instead_rotvel: True # stage simulator takes the angle instead of the rotvel as input (twist message)
  # ********************************************************************
- 
+
  footprint_model: # measures from the golf car
    type: "polygon" # l=2,395m w=1,200m rear=0,980m
    vertices: [ [-1.2, -0.6], [-1.2, 0.6], [1.2, 0.6], [1.2, -0.6]] # for type "polygon"

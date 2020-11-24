@@ -1,7 +1,7 @@
 
 #---standard pioneer footprint---
 #---(in meters)---
-footprint:  [ [-1.2, -0.6], [-1.2, 0.6], [1.2, 0.6], [1.2, -0.6]]
+footprint: [ [-1.1975, -0.60], [-1.1975, 0.60], [1.1975, 0.60], [1.1975, -0.60]]
 
 
 transform_tolerance: 0.2
@@ -10,7 +10,7 @@ map_type: costmap
 obstacle_layer:
  enabled: true
  obstacle_range: 0.30
- raytrace_range: 3.5
+ raytrace_range: 3.50
  inflation_radius: 0.2
  track_unknown_space: false
  combination_method: 1
