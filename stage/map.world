@@ -39,7 +39,6 @@ floorplan
 # throw in a robot
 carlike_robot
 (
-  size [2.4 1.2 1.0]
   pose [ 0.0 0.0 0.0 180.0 ]
   name "golf_car"
 )
