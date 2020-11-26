@@ -17,28 +17,29 @@ define floorplan model
   laser_return 1
 )
 
-resolution 0.001
+resolution 0.02
 interval_sim 100  # simulation timestep in milliseconds
 
 window
 (
-  size [ 700.0 600.0 ]
-  center [ 5.0 5.0 ]
-  rotate [ 0.0 0.0 ]
+  size [ 600.0 700.0 ]
+  center [ 0.0 0.0 ]
+  rotate [ 0.0 180.0 ]
   scale 60
 )
 
 floorplan
 (
-  name "real_world_obstacles"
+  name "real_world"
   bitmap "../maps/map.png"
-  size [ 10.0 10.0 2.0 ]
-  pose [  5.0  5.0 0.0 180.0 ]
+  size [ 20.0 20.0 2.0 ] 		#this units for the size of the map are the same as the ones in the yaml file
+  pose [  0.0  0.0 0.0 180.0 ]	#but it centers everything in 0 although fliped
 )
 
 # throw in a robot
 carlike_robot
 (
-  pose [ 5.0 5.0 0.0 180.0 ]
-  name "robot"
+  size [2.4 1.2 1.0]
+  pose [ 0.0 0.0 0.0 180.0 ]
+  name "golf_car"
 )
