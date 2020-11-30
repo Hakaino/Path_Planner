@@ -8,6 +8,10 @@
  -->
 <launch>
 
+        <!--  ************** Ackermann steering converter ***************  
+	 <include file="$(find path_planner)/scripts/ackermann.py" />-->
+	  <node name="ackermann" pkg="path_planner" type="ackermann.py" />
+	 
 	<!--  ************** Global Parameters ***************  -->
         <param name="/use_sim_time" value="true"/>
 
@@ -43,9 +47,9 @@
 	<node pkg="amcl" type="amcl" name="amcl" output="screen">
 		<rosparam file="$(find path_planner)/cfg/amcl_params.yaml" command="load" />
 
-	        <param name="initial_pose_x"            value="5"/>
-		<param name="initial_pose_y"            value="5"/>
-		<param name="initial_pose_a"            value="3.14"/>
+	        <param name="initial_pose_x"            value="0"/>
+		<param name="initial_pose_y"            value="0"/>
+		<param name="initial_pose_a"            value="0"/>
 	</node>
 
 	  <!--  **************** Visualisation ****************  -->

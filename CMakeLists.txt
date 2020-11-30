@@ -180,6 +180,10 @@ install(DIRECTORY
   PATTERN ".svn" EXCLUDE
 )
 
+catkin_install_python(PROGRAMS scripts/ackermann.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
 catkin_install_python(PROGRAMS scripts/park_planner.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
