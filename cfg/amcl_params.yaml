@@ -1,4 +1,4 @@
-use_map_topic: true
+use_map_topic: false
 
 odom_frame_id: "odom"
 base_frame_id: "base_footprint"
